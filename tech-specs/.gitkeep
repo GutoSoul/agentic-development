@@ -1,0 +1,3 @@
+# Saída de /tech-spec. Uma Tech Spec por task — formato tech-specs/<slug>__<TASK_ID>.md
+# Produzido por: skill tech-spec-creator
+# Consumido por: /code (que invoca o agente coder apropriado)

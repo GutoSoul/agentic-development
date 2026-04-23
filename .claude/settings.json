@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "_comment_about_this_file": "Exemplo de settings.json com hooks — demonstra 'programmatic rules'. Hooks são comandos que a harness do Claude Code executa em eventos específicos (não é Claude quem executa). Útil para reforçar convenções, rodar formatters, bloquear ações, etc.",
+
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🧭 Spec-Driven Development ativo. Fluxo: /spec → /plan → /tech-spec → agente coder. Não pule etapas.'"
+          }
+        ]
+      }
+    ],
+
+    "PostToolUse": [
+      {
+        "_comment": "Dispara depois que Claude grava/edita qualquer arquivo dentro de rules/. Lembra o autor de que convenção alterada pode exigir atualização em outros documentos (Tech Specs em curso, README).",
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '📝 Se você alterou algo em rules/, considere: alguma Tech Spec em curso ainda cita o padrão antigo? Atualize antes de codar.'"
+          }
+        ]
+      }
+    ]
+  }
+}
