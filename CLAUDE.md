@@ -21,5 +21,4 @@
 ---
 
 > **Princípio:** este arquivo é só o índice. Toda convenção substantiva vive em `rules/<tópico>.md`. Isso deixa cada regra auditável, evolutiva e fácil de discutir em PR.
->
-> Teste, Teste2, Teste3
+
